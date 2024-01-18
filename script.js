@@ -22,8 +22,8 @@ Notification.requestPermission().then((permissionResult) => {
       })
   }
   
-  // setTimeout(() => {
-  //   run()
-  // }, 1000)
+  setTimeout(() => {
+    run()
+  }, 1000)
   
   
