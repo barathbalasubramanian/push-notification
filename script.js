@@ -26,5 +26,3 @@ function run() {
 setInterval(() => {
     run()
 }, 1000)
-  
-  
