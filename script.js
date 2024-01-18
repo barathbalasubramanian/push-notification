@@ -6,24 +6,25 @@ Notification.requestPermission().then((permissionResult) => {
     } 
   })
   
-  const button = document.querySelector('.show-notification-button')
   
-  function run() {
+function run() {
+    console.log("Running")
     navigator.serviceWorker.register('/sw.js')
-      .then((registration) => {
-        Notification.requestPermission().then((permissionResult) => {
-          if (permissionResult === 'granted') {
-            registration.showNotification(
-              'My first notification',
-              { body: 'More details about this notification' }
-            )
-          }
-        })
+    .then((registration) => {
+      Notification.requestPermission().then((permissionResult) => {
+        if (permissionResult === 'granted') {
+          registration.showNotification(
+            'My first notification',
+            { body: 'More details about this notification' }
+          )
+        }
       })
-  }
-  
-  setTimeout(() => {
+    })
+}
+
+
+setInterval(() => {
     run()
-  }, 1000)
+}, 1000)
   
   
